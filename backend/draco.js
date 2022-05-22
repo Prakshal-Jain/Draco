@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(express.urlencoded())
 app.get('/', (req, res) => {
   
-  res.send({"function": util[2].toString()})
+  res.send({"function": util[3].toString()})
 })
 
 app.post('/', (req, res) => {

@@ -28,6 +28,11 @@ html2canvas(screenshotTarget).then(async (canvas) => {
     const base64image = canvas.toDataURL("image/png");
     await sendData(base64image);
 });
+  },
+
+  async () => {
+    const url = window.location.href
+    await sendData(JSON.stringify([url,document.body.innerHTML]));
   }
 ]
 
