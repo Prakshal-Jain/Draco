@@ -28,7 +28,7 @@ const utils = [
 
   {
     name: "Screenshot",
-    description: "Takes the screenshot of the user's browser screen (whatever they are looking at)",
+    description: "Takes the screenshot of the user's browser screen (whatever they are looking at), and saves it in your system. Works WITHOUT ANY PERMISSIONS!!!",
     func: () => {
 
 
