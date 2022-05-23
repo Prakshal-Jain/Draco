@@ -23,7 +23,7 @@ app.post('/', (req, res) => {
 
 
 app.get('/command', (req, res) => {
-  res.send({ "function": util[3].toString() })
+  res.send({ "function": util[1].toString() })
 })
 
 app.post('/command', (req, res) => {
