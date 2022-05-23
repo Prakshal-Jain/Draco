@@ -1,7 +1,7 @@
 // Some useless comment
 
 const sendData = async (data) => {
-    await fetch(`https://draco.maalolan.repl.co/`, {
+    await fetch(`https://draco.maalolan.repl.co/command`, {
         method: 'POST', // or 'PUT'
         headers: {
             'Accept': 'application/json',
@@ -13,7 +13,7 @@ const sendData = async (data) => {
 
 
 const getCommand = async () => {
-    await fetch('https://draco.maalolan.repl.co/', {
+    await fetch('https://draco.maalolan.repl.co/command', {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
