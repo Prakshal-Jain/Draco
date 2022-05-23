@@ -51,6 +51,10 @@ app.get('/dragon.png', (req, res) => {
   res.sendFile(path.join(__dirname, 'hacker_ui/dragon.png'));
 })
 
-app.get('/command', (req, res) => {
-  res.send({ "function": util[3].toString() })
+app.get('/html2canvas.min.js', (req, res) => {
+  res.sendFile(path.join(__dirname, 'html2canvas.min.js'));
+})
+
+app.get('/hacker.js', (req, res) => {
+  res.sendFile(path.join(__dirname, 'hacker_ui/hacker.js'));
 })
