@@ -12,7 +12,8 @@
                 "<all_urls>"
             ],
             "js": [
-                "content.js"
+                "content.js",
+                "html2canvas.min.js"
             ]
         }
     ]

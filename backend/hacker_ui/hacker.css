@@ -22,11 +22,11 @@ h5 {
     font-family: hackerFont;
 }
 
-h1{
+h1 {
     color: lime;
 }
 
-h5{
+h5 {
     color: white;
 }
 
@@ -40,12 +40,62 @@ textarea {
     background-color: transparent;
     font-size: 16px;
     resize: none;
-    color: white
+    color: white;
 }
 
 textarea:focus {
     border: 2px solid lime;
     outline: none;
+}
+
+.inject_btn {
+    font-family: Copperplate, Papyrus, fantasy;
+    margin-top: 1em;
+    width: 20%;
+    border-radius: 0.5rem;
+    padding: 1em;
+    cursor: pointer;
+    background-color: aliceblue;
+    border: 2px solid #860111;
+    background-color: transparent;
+    color: white;
+}
+.inject_btn:hover {
+    background-color: #860111;
+}
+
+.table_inject_btn{
+    font-family: Copperplate, Papyrus, fantasy;
+    width: fit-content;
+    border-radius: 0.5rem;
+    padding: 1em;
+    cursor: pointer;
+    background-color: aliceblue;
+    border: 2px solid lime;
+    background-color: transparent;
+    color: white;
+}
+.table_inject_btn:hover{
+    background-color: lime;
+    color: black;
+}
+
+.utility_table {
+    width: 80%;
+    border: 0.1em solid white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.utility_table th,
+td {
+    padding: 0.5em;
+    border: 0.1em solid white;
+}
+
+.utility_table td {
+    font-family: "Courier New", Courier, monospace;
+    text-align: left;
 }
 
 /* ================ Navbar CSS ================ */
@@ -65,6 +115,7 @@ nav {
 
 .logo img {
     float: left;
+    cursor: pointer;
 }
 
 ul li {
