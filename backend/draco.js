@@ -1,11 +1,11 @@
-const express = require('express')
-const app = express()
-const cors = require('cors')
+const express = require('express');
+const app = express();
+const cors = require('cors');
 
-const multer  = require('multer')
+const multer  = require('multer');
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'screenshots/')
+    cb(null, 'screenshots/');
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '.jpg') //Appending .jpg
@@ -70,8 +70,6 @@ app.post('/command', (req, res) => {
 })
 
 app.post('/screenshots', upload.single("screenshot"), function (req, res, next) {
-  // req.file is the `avatar` file
-  // req.body will hold the text fields, if there were any
   res.send('Got a POST request')
 })
 

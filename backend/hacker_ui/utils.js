@@ -1,6 +1,6 @@
 async function getUtils() {
     // ==============UPDATE THE ADDRESS===============
-    return await fetch('utils', {
+    return await fetch('https://draco.maalolan.repl.co/utils', {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -14,7 +14,7 @@ async function getUtils() {
 }
 
 async function postUtils(idx) {
-    await fetch(`utils`, {
+    await fetch(`https://draco.maalolan.repl.co/utils`, {
         method: 'POST', // or 'PUT'
         headers: {
             'Accept': 'application/json',
