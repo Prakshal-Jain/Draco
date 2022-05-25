@@ -30,7 +30,7 @@ h5 {
     color: white;
 }
 
-textarea {
+.code_box {
     width: 50%;
     height: 150px;
     padding: 12px 20px;
@@ -43,7 +43,7 @@ textarea {
     color: white;
 }
 
-textarea:focus {
+.code_box:focus {
     border: 2px solid lime;
     outline: none;
 }
@@ -64,7 +64,7 @@ textarea:focus {
     background-color: #860111;
 }
 
-.table_inject_btn{
+.table_inject_btn {
     font-family: Copperplate, Papyrus, fantasy;
     width: fit-content;
     border-radius: 0.5rem;
@@ -75,7 +75,7 @@ textarea:focus {
     background-color: transparent;
     color: white;
 }
-.table_inject_btn:hover{
+.table_inject_btn:hover {
     background-color: lime;
     color: black;
 }
@@ -96,6 +96,18 @@ td {
 .utility_table td {
     font-family: "Courier New", Courier, monospace;
     text-align: left;
+}
+
+.creator_names {
+    cursor: pointer;
+}
+
+.creator_names:hover {
+    color: lime;
+}
+
+a {
+    color: rgb(255, 255, 75);
 }
 
 /* ================ Navbar CSS ================ */

