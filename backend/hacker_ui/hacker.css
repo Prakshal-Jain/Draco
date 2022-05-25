@@ -30,7 +30,7 @@ h5 {
     color: white;
 }
 
-textarea {
+.code_box {
     width: 50%;
     height: 150px;
     padding: 12px 20px;
@@ -43,7 +43,7 @@ textarea {
     color: white;
 }
 
-textarea:focus {
+.code_box:focus {
     border: 2px solid lime;
     outline: none;
 }

