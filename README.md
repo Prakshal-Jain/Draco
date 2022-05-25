@@ -13,6 +13,7 @@ Any change we want to make will be on our "hacker" side.
 
 Then, we started writing utility functions (kinda like library), which had a bunch of pre-written functions that can be injected to the target's browser's page.
 
+## What can it do?
 Currently, we have the power to take screenshots of the pages and save it on our systems, read the keystrokes (passwords etc.), and erase all contents of a page and show "You are Hacked" message!
 
 We are continuously working more on the utility functions, and some of the are REALLY COOL AND EVIL.
