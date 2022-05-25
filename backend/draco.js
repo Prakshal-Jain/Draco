@@ -65,7 +65,7 @@ app.get('/command', (req, res) => {
 })
 
 app.post('/command', (req, res) => {
-  console.log(req.body)
+  console.log(req.body.data)
   res.send('Got a POST request')
 })
 

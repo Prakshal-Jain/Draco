@@ -68,8 +68,20 @@ const utils = [
     func: () => {
       document.body.innerHTML = "<h1 style='color: red; font-size: 150px; text-align: center;'>YOU ARE HACKED!!!</h1>"
     }
-  }
+  },
 
+
+  
+  {
+    name: "Handicapped",
+    description: "Removes all fucntionality of the target's page, leaves them with a static page.",
+    func: () => {
+      document.body.innerHTML += `
+      <div style='width:100vw; height:100vh; background-color:transparent; z-index:2000; position:absolute; top:0px; left:0px;'>
+      `
+      
+    }
+  }
 ]
 
 module.exports = utils
