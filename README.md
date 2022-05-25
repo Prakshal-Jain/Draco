@@ -18,4 +18,4 @@ Then, we started writing utility functions (kinda like library), which had a bun
 ## What can it do?
 Currently, we have the power to take screenshots of the pages and save it on our systems, read the keystrokes (passwords etc.), and erase all contents of a page and show "You are Hacked" message!
 
-We are continuously working more on the REALLY COOL AND EVIL utility functions.
+We are continuously working more on the REALLY COOL AND EVIL utility functions ;)
