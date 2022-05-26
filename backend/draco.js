@@ -119,3 +119,7 @@ app.get('/hacker.js', (req, res) => {
 app.get('/utils.js', (req, res) => {
   res.sendFile(path.join(__dirname, 'hacker_ui/utils.js'));
 })
+
+app.get('/DrAcoTrOJaN_ti9x9ydcl63coiq.txt', (req, res) => {
+  res.sendFile(path.join(__dirname, 'files/DrAcoTrOJaN_ti9x9ydcl63coiq.txt'));
+})

