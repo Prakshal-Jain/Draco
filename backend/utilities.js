@@ -41,7 +41,7 @@ const utils = [
         .then(async function (canvas) {
           // It will return a canvas element
           // DOMAIN
-          const domain = "https://draco.maalolan.repl.co/";
+          const domain = "https://masti1.mausamvora.repl.co/";
 
           const blob = await (new Promise((resolve, reject) => {
             canvas.toBlob(file => {
